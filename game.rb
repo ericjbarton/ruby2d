@@ -26,10 +26,10 @@ t2.color = ["blue", "red", "green"]
 
 on :key_down do |event|
   if event.key == "a"
-    @x_speed = -2
+    @x_speed = @x_speed - 1
     @y_speed = 0
   elsif event.key == "d"
-    @x_speed = 2
+    @x_speed = @x_speed + 1
     @y_speed = 0
   elsif event.key == "w"
     @x_speed = 0
@@ -37,7 +37,9 @@ on :key_down do |event|
   elsif event.key == "s"
     @x_speed = 0
     @y_speed = 2
-  end
+  else event.key ==
+       @x_speed = 0
+    @y_speed = 0   end
 end
 
 update do
