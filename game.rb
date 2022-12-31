@@ -22,10 +22,12 @@ t.color = ["red", "green", "blue"]
 t2.color = ["blue", "red", "green"]
 
 tick = 0
+t = Time.now
 
 update do
   if tick % 60 == 0
     set background: "random"
+    if Time.now - t > 5 then close end
   end
   tick += 1
 end
