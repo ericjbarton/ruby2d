@@ -1,6 +1,8 @@
 require "ruby2d"
 
-set width: 800, height: 600, title: "Where am I going with this"
+set width: 800, height: 600, title: "Where am I going with this", background: "navy", resizable: "true"
+
+get :width
 
 s = Square.new
 t = Triangle.new(
@@ -18,4 +20,14 @@ t2 = Triangle.new(
 s.color = ["blue", "green", "red", "yellow"]
 t.color = ["red", "green", "blue"]
 t2.color = ["blue", "red", "green"]
+
+tick = 0
+
+update do
+  if tick % 60 == 0
+    set background: "random"
+  end
+  tick += 1
+end
+
 show
