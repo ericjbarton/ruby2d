@@ -33,10 +33,10 @@ on :key_down do |event|
     @y_speed = 0
   elsif event.key == "w"
     @x_speed = 0
-    @y_speed = -2
+    @y_speed = @y_speed - 1
   elsif event.key == "s"
     @x_speed = 0
-    @y_speed = 2
+    @y_speed = @y_speed + 1
   else event.key ==
        @x_speed = 0
     @y_speed = 0   end
