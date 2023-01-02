@@ -4,7 +4,7 @@ set background: "navy"
 set width: 1920
 set height: 1080
 
-class Box
+class Snow
   def initialize
     @x = rand(Window.width)
     @y = rand(Window.height)
@@ -32,21 +32,18 @@ class Character
   def draw
     Circle.new(x: @x, y: @y, size: 50, color: "blue")
   end
-
-  def move
-    
 end
 
-$boxes = Array.new(500) { Box.new }
+$snowstorm = Array.new(500) { Snow.new }
 character = Character.new
 update do
   clear
   character.draw
   # character.move
 
-  $boxes.each do |box|
-    box.draw
-    box.move
+  $snowstorm.each do |snow|
+    snow.draw
+    snow.move
   end
 end
 

@@ -1,6 +1,6 @@
 require "ruby2d"
 
-set width: 1920, height: 1080, title: "Where am I going with this", background: "green", resizable: "true", borderless: "true"
+set width: 1920, height: 1080, title: "Where am I going with this", background: "navy", resizable: "true", borderless: "true"
 
 get :width
 
