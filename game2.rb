@@ -18,8 +18,8 @@ class Box
   end
 
   def move
-    @x = @x + @x_velocity
-    @y = @y + @y_velocity
+    @x = (@x + @x_velocity) % Window.width
+    @y = (@y + @y_velocity) % Window.height
   end
 end
 
