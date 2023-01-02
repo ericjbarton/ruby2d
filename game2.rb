@@ -23,10 +23,22 @@ class Box
   end
 end
 
-$boxes = Array.new(40) { Box.new }
+class Character
+  def initialize
+    @x = 960
+    @y = 540
+  end
 
+  def draw
+    Circle.new(x: @x, y: @y, size: 100, color: "white")
+  end
+end
+
+$boxes = Array.new(40) { Box.new }
+character = Character.new
 update do
   clear
+  character.draw
   $boxes.each do |box|
     box.draw
     box.move
