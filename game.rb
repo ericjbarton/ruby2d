@@ -4,6 +4,8 @@ set width: 800, height: 600, title: "Where am I going with this", background: "n
 
 get :width
 
+Image.new("/Users/brumpo/projects/ruby2d/BrownieEYES.jpg")
+
 @tr = Triangle.new(
   x1: 320, y1: 50,
   x2: 540, y2: 430,
