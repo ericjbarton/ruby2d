@@ -9,12 +9,12 @@ class Box
     @x = rand(Window.width)
     @y = rand(Window.height)
     @x_velocity = (-5..5).to_a.sample
-    @y_velocity = (-5..5).to_a.sample
-    @color = Color.new("random")
+    @y_velocity = (5..7).to_a.sample
+    @color = Color.new("white")
   end
 
   def draw
-    Square.new(x: @x, y: @y, size: 15, color: @color)
+    Square.new(x: @x, y: @y, size: 5, color: @color)
   end
 
   def move
@@ -30,15 +30,20 @@ class Character
   end
 
   def draw
-    Circle.new(x: @x, y: @y, size: 100, color: "white")
+    Circle.new(x: @x, y: @y, size: 50, color: "blue")
   end
+
+  def move
+    
 end
 
-$boxes = Array.new(40) { Box.new }
+$boxes = Array.new(500) { Box.new }
 character = Character.new
 update do
   clear
   character.draw
+  # character.move
+
   $boxes.each do |box|
     box.draw
     box.move

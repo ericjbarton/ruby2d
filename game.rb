@@ -1,10 +1,9 @@
 require "ruby2d"
 
-set width: 1920, height: 1080, title: "Where am I going with this", background: "navy", resizable: "true", borderless: "true"
+set width: 1920, height: 1080, title: "Where am I going with this", background: "green", resizable: "true", borderless: "true"
 
 get :width
 
-# Image.new("/Users/brumpo/projects/ruby2d/BrownieEYES.jpg")
 Text.new(
   "WASD to move",
   x: 500, y: 100,
@@ -15,9 +14,9 @@ Text.new(
   z: 10,
 )
 @tr = Triangle.new(
-  x1: 320, y1: 50,
-  x2: 540, y2: 430,
-  x3: 100, y3: 430,
+  x1: 520, y1: 50,
+  x2: 740, y2: 430,
+  x3: 300, y3: 430,
 )
 @s = Square.new
 
