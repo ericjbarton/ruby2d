@@ -23,23 +23,36 @@ class Snow
   end
 end
 
+class Path
+  def initialize
+    @x = 800
+    @y = 0
+  end
+
+  def draw
+    Rectangle.new(x: @x, y: @y, width: 100, height: 1080, color: "brown", z: 0)
+  end
+end
+
 class Character
   def initialize
-    @x = 960
+    @x = 850
     @y = 540
   end
 
   def draw
-    Circle.new(x: @x, y: @y, size: 50, color: "blue")
+    Circle.new(x: @x, y: @y, size: 50, color: "blue", z: 1)
   end
 end
 
 $snowstorm = Array.new(500) { Snow.new }
+path = Path.new
 character = Character.new
 update do
   clear
   character.draw
   # character.move
+  path.draw
 
   $snowstorm.each do |snow|
     snow.draw
