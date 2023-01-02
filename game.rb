@@ -6,7 +6,7 @@ get :width
 
 # Image.new("/Users/brumpo/projects/ruby2d/BrownieEYES.jpg")
 Text.new(
-  "WASD to move, space to stop.",
+  "WASD to move",
   x: 500, y: 100,
   # font: "vera.ttf",
   size: 20,
@@ -34,22 +34,20 @@ t2.color = ["blue", "red", "green"]
 @x_speed = 0
 @y_speed = 0
 
-on :key_down do |event|
+on :key_held do |event|
   if event.key == "a"
-    @x_speed = @x_speed - 1
+    @x_speed = @x_speed - 0.5
     @y_speed = 0
   elsif event.key == "d"
-    @x_speed = @x_speed + 1
+    @x_speed = @x_speed + 0.5
     @y_speed = 0
   elsif event.key == "w"
     @x_speed = 0
-    @y_speed = @y_speed - 1
+    @y_speed = @y_speed - 0.5
   elsif event.key == "s"
     @x_speed = 0
-    @y_speed = @y_speed + 1
-  else event.key ==
-       @x_speed = 0
-    @y_speed = 0   end
+    @y_speed = @y_speed + 0.5
+  end
 end
 
 update do
