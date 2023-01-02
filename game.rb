@@ -1,11 +1,19 @@
 require "ruby2d"
 
-set width: 800, height: 600, title: "Where am I going with this", background: "navy", resizable: "true"
+set width: 1920, height: 1080, title: "Where am I going with this", background: "navy", resizable: "true", borderless: "true"
 
 get :width
 
-Image.new("/Users/brumpo/projects/ruby2d/BrownieEYES.jpg")
-
+# Image.new("/Users/brumpo/projects/ruby2d/BrownieEYES.jpg")
+Text.new(
+  "WASD to move, space to stop.",
+  x: 500, y: 100,
+  # font: "vera.ttf",
+  size: 20,
+  color: "red",
+  # rotate: 90,
+  z: 10,
+)
 @tr = Triangle.new(
   x1: 320, y1: 50,
   x2: 540, y2: 430,
