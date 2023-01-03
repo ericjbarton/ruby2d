@@ -34,27 +34,37 @@ class Path
   end
 end
 
-class Character
+class Player
   def initialize
-    character = Circle.new(x: 850, y: 540, size: 50, color: "blue")
+    @character = Circle.new(x: 850, y: 540, size: 50, color: "blue")
+    @velocity = 0
   end
-end
 
-on :key_held do |event|
-  case event.key
-  when "w"
-    character.x += 0
-    character.y += 1
+  def move
+    @character.y -= @velocity
+  end
+
+  def increase_velocity
+    @velocity += 0.5
   end
 end
 
 $snowstorm = Array.new(500) { Snow.new }
 path = Path.new
+player = Player.new
 
+on :key_held do |event|
+  case event.key
+  when "w"
+    player.increase_velocity
+  end
+end
 update do
   clear
   path.draw
-  character
+  Player.new
+  player.move
+  player.increase_velocity
 
   $snowstorm.each do |snow|
     snow.draw
