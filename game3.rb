@@ -35,43 +35,26 @@ class Path
 end
 
 class Character
-  attr_writer :x, :y, :x_speed, :y_speed, :key_held
-
   def initialize
-    @x = 850
-    @y = 540
-    @x_speed = 0
-    @y_speed = 0
+    character = Circle.new(x: 850, y: 540, size: 50, color: "blue")
   end
+end
 
-  def draw
-    Circle.new(x: @x, y: @y, size: 50, color: "blue")
-  end
-
-  def move
-    Window.on :key_held do |event|
-      case event.key
-      when "w"; @y_speed = 1
-      end
-    end
+on :key_held do |event|
+  case event.key
+  when "w"
+    character.x += 0
+    character.y += 1
   end
 end
 
 $snowstorm = Array.new(500) { Snow.new }
-character = Character.new
 path = Path.new
-on :key_held do |event|
-  if event.key == "w"
-    @x_speed = 0
-    @y_speed = 1
-  end
-end
 
 update do
   clear
   path.draw
-  character.draw
-  character.move
+  character
 
   $snowstorm.each do |snow|
     snow.draw
