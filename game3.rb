@@ -25,6 +25,22 @@ end
 
 $snowstorm = Array.new(500) { Snow.new }
 
+on :key_held do |event|
+  if event.key == "a"
+    @x_speed = @x_speed - 0.5
+    @y_speed = 0
+  elsif event.key == "d"
+    @x_speed = @x_speed + 0.5
+    @y_speed = 0
+  elsif event.key == "w"
+    @x_speed = 0
+    @y_speed = @y_speed - 0.5
+  elsif event.key == "s"
+    @x_speed = 0
+    @y_speed = @y_speed + 0.5
+  end
+end
+
 update do
   clear
   Rectangle.new(x: 800, y: 0, width: 100, height: 1080, color: "brown", z: 0)
