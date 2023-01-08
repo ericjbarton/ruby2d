@@ -53,6 +53,7 @@ on :key_up do |event|
 end
 
 update do
+  Rectangle.new(x: 800, y: 0, width: 100, height: 1080, color: "brown", z: -1)
   @character.x += @x_speed
   @character.y += @y_speed
 end
