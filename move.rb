@@ -52,10 +52,35 @@ on :key_up do |event|
   end
 end
 
+class Snow
+  def initialize
+    @snow_x = rand(Window.width)
+    @snow_y = rand(Window.height)
+    @x_velocity = (-5..5).to_a.sample
+    @y_velocity = (5..7).to_a.sample
+    @color = Color.new("white")
+  end
+
+  def draw
+    Square.new(x: @snow_x, y: @snow_y, size: 5, color: @color, z: 1)
+  end
+
+  def move
+    @snow_x = (@snow_x + @x_velocity) % (Window.width - 100)
+    @snow_y = (@snow_y + @y_velocity) % (Window.height - 100)
+  end
+end
+
+$snowstorm = Array.new(100) { Snow.new }
+
 update do
   Rectangle.new(x: 800, y: 0, width: 100, height: 1080, color: "brown", z: -1)
   @character.x += @x_speed
   @character.y += @y_speed
+  $snowstorm.each do |snow|
+    snow.draw
+    snow.move
+  end
 end
 # tick = 0
 # t = Time.now
