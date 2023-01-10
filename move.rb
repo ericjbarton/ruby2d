@@ -20,6 +20,8 @@ Text.new(
 
 @x_speed = 0
 @y_speed = 0
+@snow_x = 0
+@snow_y = 0
 
 on :key_held do |event|
   if event.key == "a"
@@ -77,10 +79,10 @@ update do
   Rectangle.new(x: 800, y: 0, width: 100, height: 1080, color: "brown", z: -1)
   @character.x += @x_speed
   @character.y += @y_speed
-  $snowstorm.each do |snow|
-    snow.draw
-    snow.move
-  end
+  # $snowstorm.each do |snow|
+  #   snow.draw
+  #   snow.move
+  # end
 end
 # tick = 0
 # t = Time.now
